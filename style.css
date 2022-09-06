@@ -43,6 +43,11 @@
 .img-card span{
   font-size: 15px;
 }
+
+#loading{
+  display: none;
+  width: 80px;
+}
 .img-card img{
   max-width: 80%;
   border-radius: 3px;
@@ -50,6 +55,7 @@
   -webkit-filter: blur(1.5px);
   box-shadow: 2px 2px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 .text{
   width: 100%;
