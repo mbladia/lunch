@@ -1,65 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+*, body{
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: 'Kalam', cursive;
 }
-body{
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(251, 246, 246);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.border{
+  border: 3px solid rgb(216, 216, 216);
+  width: 900px;
+  height: 600px;
+  display: flex;
+  position: relative;
+}
+.img-border{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+}
+.img-card{
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #343F4F;
+  flex-direction: column;
+  padding: 10px 5px;
+  text-align: center;
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px;
 }
-.wrapper{
-  display: flex;
+.img-card span{
+  font-size: 15px;
 }
-.wrapper .static-txt{
-  color: #fff;
-  font-size: 60px;
-  font-weight: 400;
+.img-card img{
+  max-width: 80%;
+  border-radius: 3px;
+  filter: blur(1.5px);
+  -webkit-filter: blur(1.5px);
+  box-shadow: 2px 2px;
+  margin-bottom: 10px;
 }
-.wrapper .dynamic-txts{
-  margin-left: 15px;
-  height: 90px;
-  line-height: 90px;
-  overflow: hidden;
-}
-.dynamic-txts li{
-  list-style: none;
-  color: #FC6D6D;
-  font-size: 60px;
-  font-weight: 500;
-  position: relative;
-  top: 0;
-  animation: slide 16s steps(4) infinite;
-}
-@keyframes slide {
-  100%{
-    top: -360px;
-  }
-}
-.dynamic-txts li span{
-  position: relative;
-  margin: 5px 0;
-  line-height: 90px;
-}
-.dynamic-txts li span::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  height: 100%;
+.text{
   width: 100%;
-  background: #343F4F;
-  border-left: 2px solid #FC6D6D;
-  animation: typing 4s steps(30) infinite;
+  display: flex;
+  align-items: center;
+  padding: 20px;
 }
-@keyframes typing {
-  40%, 60%{
-    left: calc(100% + 30px);
+.credit{
+  position: absolute;
+  bottom: -20px;
+  right: 50%;
+  background-color: rgb(251, 246, 246);
+  padding: 5px 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .border {
+    flex-direction: column;
+    height: 700px;
   }
-  100%{
-    left: 0;
+  .img-border{
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .img-card{
+    height: 100%;
+  }
+  .text{
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .img-card img{
+    max-width: 90%;
   }
 }
