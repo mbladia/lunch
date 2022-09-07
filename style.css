@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* flex-direction: column; */
   
 }
 .border{
@@ -28,6 +29,11 @@
   align-items: center;
   padding: 20px;
 }
+.music-icon{
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
 .img-card{
   display: flex;
   align-items: center;
@@ -40,10 +46,24 @@
   border-radius: 5px;
   box-shadow: 3px 3px 10px;
 }
+.audio-card{
+  position: relative;
+  margin-top: 60px;
+  max-width: 100%;
+}
 .img-card span{
   font-size: 15px;
 }
 
+#btn-pause{
+  display: none;
+}
+.audio-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 #loading{
   display: none;
   width: 80px;
@@ -61,7 +81,9 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
   padding: 20px;
+  flex-direction: column;
 }
 .credit{
   position: absolute;
@@ -71,7 +93,7 @@
   padding: 5px 20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .border {
     flex-direction: column;
     height: 700px;
@@ -83,13 +105,146 @@
   }
   .img-card{
     height: 100%;
+    /* width: 50%; */
   }
   .text{
     height: 100%;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
   }
   .img-card img{
-    max-width: 90%;
+    max-width: 60%;
   }
+  .credit{
+    bottom: -20px;
+  }
+}
+
+.thumbnail {
+	width: 145px;
+	height: 145px;
+	border-radius: 50%;
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	background: url("https://trevor-reznik.github.io/guides/email-template/4.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: cover;
+}
+.player {
+	/* position: absolute;
+	top: 50%;
+	left: 50%; */
+	/* transform: translate(-50%, -50%); */
+	padding: 5px;
+	user-select: none;
+  max-width: 100%;
+}
+.player .circle {
+	max-width: 120px;
+}
+.player .circle .active {
+	text-transform: uppercase;
+	animation-name: example;
+	animation: record 3s linear 0s infinite forwards;
+}
+@keyframes record {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+.player .circle .circ {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	left: 15%;
+	top: 30%;
+	background-color: #fff;
+	border-radius: 50%;
+	z-index: 1;
+}
+.time-name{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.player .active {
+	top: -100px;
+}
+.player .time-name .time {
+	font-size: 0.85em;
+	color: black; /* secondary text color */
+  margin-right: 20px;
+}
+.player .progress-bar {
+	background-color: hsla(0, 0%, 100%, 0.3);
+	border-radius: 20px;
+}
+.player .progress-bar .fillBar {
+	width: 0;
+	height: 6px;
+	border-radius: 20px;
+}
+.player .artist-name {
+	color: #ffffff; /* primary text color */
+	font-weight: bold;
+	font-size: 1.1em;
+}
+.player .time-name .music-name {
+	color: black; /* secondary text color */
+	font-size: 0.85em;
+}
+.player .player-control {
+	background-color: #dcc2c2;
+	min-width: 300px;
+	/* height: 100px; */
+	border-radius: 20px;
+	text-align: center;
+	box-shadow: 0 0.75vh 0.5vw rgba(0, 0, 0, 0.2),
+		0 1.6vh 1.25vw rgba(0, 0, 0, 0.35), 0.02vw -0.1vh rgba(56, 56, 56, 0.514);
+}
+.player .player-control #play {
+	border-radius: 50%;
+}
+.player .player-control img {
+  cursor: pointer;
+  width:35px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.play-btn:before {
+	border-radius: 500px;
+	color: #ffffff;
+	background-color: #1db954;
+	padding: 10px 10px 10px 15px;
+}
+.play-btn:hover:before {
+	filter: brightness(1.08) saturate(1.03);
+	box-shadow: 0 1px #222222;
+}
+.pause-btn:before {
+	border-radius: 500px;
+	color: #ffffff;
+	background-color: #1db954;
+	padding: 10px 10px 10px 10px;
+}
+.pause-btn:hover:before {
+	filter: brightness(1.08);
+	box-shadow: 0 1px #855454b6;
+}
+.next-btn:before {
+	color: rgb(179, 179, 179);
+}
+.next-btn:hover:before {
+	color: #fff;
+}
+.prev-btn:before {
+	color: rgb(179, 179, 179);
+}
+.prev-btn:hover:before {
+	color: #fff;
 }
